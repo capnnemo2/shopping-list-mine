@@ -6,14 +6,40 @@
 
 'use strict';
 
+function addItem() {
+    $('#js-shopping-list-form').submit(function(e) {
+        event.preventDefault();
+        const entry = $('#shopping-list-entry').val();
+        $('.shopping-list').append(`<li>
+        <span class="shopping-item">${entry}</span>
+        <div class="shopping-item-controls">
+          <button class="shopping-item-toggle">
+            <span class="button-label">check</span>
+          </button>
+          <button class="shopping-item-delete">
+            <span class="button-label">delete</span>
+          </button>
+        </div>
+      </li>`
+      );
+      $(this)[0].reset();
+    });
+}
+$(addItem);
+
+
+
+
+
+
+
+
+
+
+
 function handleCheckUncheck() {
-    $('.shopping-item-toggle').on('click', function(e) {
-        const checked = $(this.parent('.shopping-item'));
-        if (checked.hasClass('.shopping-item_checked') {
-            $(checked).removeClass('.shopping-item_checked');
-        } else {
-            $(checked).addClass('.shopping-item_checked');
-        }
+    $('.shopping-item-toggle').on('click', '.shopping-item-toggle', function(e) {
+         $(this).closest('li').find('.shopping-item').toggleClass('.shopping-item_checked');
     })
 }
 
