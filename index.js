@@ -37,6 +37,7 @@ $(addItem);
 
 
 
+
 function handleCheckUncheck() {
     $('.shopping-item-toggle').on('click', '.shopping-item-toggle', function(e) {
          $(this).closest('li').find('.shopping-item').toggleClass('.shopping-item_checked');
