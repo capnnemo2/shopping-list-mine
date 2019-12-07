@@ -29,10 +29,12 @@ $(addItem);
 
 function handleCheck() {
     $('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
-        $(this).closest('li').find('.shopping-item').toggleClass('.shopping-list_checked');
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
     })
 }
 $(handleCheck);
+
+
 
 function deleteItem() {
     $('.shopping-list').on('click', '.shopping-item-delete', function(e) {
